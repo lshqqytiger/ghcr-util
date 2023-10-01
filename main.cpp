@@ -61,11 +61,11 @@ unsigned read_config(string &path, Json::Value &config)
     return 0;
 }
 
-inline string filter_rn(string s)
+inline string filter_r(string s)
 {
     string R("");
     for (char c : s)
-        if (c != '\r' && c != '\n')
+        if (c != '\r')
             R += c;
     return R;
 }
@@ -80,10 +80,10 @@ inline bool run(int cin, int cout, Json::Value &test)
     char c[1];
 
     while (read(cout, c, 1UL))
-        output += c;
+        output += c[0];
     close(cout);
 
-    return filter_rn(test["output"].asString()) == filter_rn(output);
+    return filter_r(test["output"].asString()) == filter_r(output);
 }
 
 int main(int argc, char **_argv)
