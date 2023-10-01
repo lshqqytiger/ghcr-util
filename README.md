@@ -1,6 +1,6 @@
 # GitHub Classroom Utils
 
-# 채점하기
+## 채점하기
 
 ```
 root
@@ -29,12 +29,18 @@ root (current directory)
 $ ./ghcr --path ./week5-2-.../ main
 ```
 
-# Build
+## Build
 
 ```
 $ make clean main test
 ```
 
-# Dependencies
+## Dependencies
 
 - [jsoncpp](https://github.com/open-source-parsers/jsoncpp)
+
+## License
+
+MIT License
+
+Copyright (c) 2023 이승훈
