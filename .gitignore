@@ -1,0 +1,6 @@
+.github
+test
+
+main
+*.d
+*.o
