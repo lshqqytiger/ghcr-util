@@ -147,9 +147,11 @@ int main(int argc, char **_argv)
                     pass = result;
 
                 int status;
+                clock_t start = clock();
                 waitpid(pid, &status, 0);
+                clock_t end = clock();
 
-                cout << test["name"].asString() << ' ' << (result ? "OK" : "FAILED") << '\n';
+                cout << test["name"].asString() << ' ' << (result ? "OK" : "FAILED") << ' ' << (((float)(end - start) / CLOCKS_PER_SEC) * 1000) << "ms" << '\n';
             }
             else
             { // Child process
